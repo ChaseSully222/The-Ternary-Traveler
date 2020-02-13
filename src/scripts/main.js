@@ -13,6 +13,29 @@ const clearForm = () => {
     (locationInput.value = "");
 };
 
+//Function that will scroll to the top of the page
+const topFunction = () => {
+  document.documentElement.scrollTop = 0;
+};
+
+//Updates our form fields with the input values of the edit feature
+const updateFormFields = entryId => {
+  const hiddenEntryId = document.getElementById("entryId");
+
+  const nameInput = document.getElementById("poiName");
+  const descriptionInput = document.getElementById("poiDescription");
+  const costInput = document.getElementById("poiCost");
+  const locationInput = document.getElementById("poiLocation");
+
+  apiActions.editEntry(entryId).then(interest => {
+    hiddenEntryId.value = interest.id;
+    nameInput.value = interest.name;
+    descriptionInput.value = interest.description;
+    costInput.value = interest.cost;
+    locationInput.value = interest.location;
+  });
+};
+
 const saveButtonAddEventListener = () => {
   const saveButton = document.getElementById("saveBtn");
 
@@ -36,7 +59,7 @@ const saveButtonAddEventListener = () => {
         name: nameInput.value,
         placeId: locationInput.value,
         description: descriptionInput.value,
-        review: "Add a Review",
+        review: "<em>Edit to add a review</em>",
         cost: costInput.value
       };
 
@@ -49,5 +72,29 @@ const saveButtonAddEventListener = () => {
   });
 };
 
+const editDeleteEventListener = () => {
+  const interestList = document.getElementById("interestList");
+
+  interestList.addEventListener("click", event => {
+    if (event.target.id.startsWith("deleteInterestEntry--")) {
+      const deleteBtnId = event.target.id;
+      const deleteBtnArray = deleteBtnId.split("--");
+      const interestIdToDelete = deleteBtnArray[1];
+      const deleteConfirm = confirm("Do you want to delete");
+
+      if (deleteConfirm == true) {
+        apiActions.deleteInterest(interestIdToDelete)
+          .then(apiActions.getInterest)
+          .then(renderInterests);
+      }
+    } else if (event.target.id.startsWith("editInterestEntry--")) {
+      const interestIdToEdit = event.target.id.split("--")[1];
+      topFunction();
+      updateFormFields(interestIdToEdit);
+    }
+  });
+};
+
+editDeleteEventListener();
 saveButtonAddEventListener();
 apiActions.getInterest().then(renderInterests);

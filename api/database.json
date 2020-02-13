@@ -40,6 +40,14 @@
       "description": "This famous cathedral is best known for its historic significance as the church where John Calvin gave his inspiring sermons during the mid-16th century.",
       "cost": 999.99,
       "review": "Beautiful architecture"
+    },
+    {
+      "name": "Eiffel Tower",
+      "placeId": "3",
+      "description": "Completed in 1889, this colossal landmark, although initially hated by many Parisians, is now a famous symbol of French civic pride.\n",
+      "review": "<em>Edit to add a review</em>",
+      "cost": "76.62",
+      "id": 4
     }
   ]
 }
