@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
+    <h1>Travel Blog</h1>
+    <form action="">
+      <!-- <input type="hidden" id="entryId" value="" /> -->
+      <fieldset class="fieldset">
+        <label for="poiName">Point of Interest</label>
+        <input type="text" name="poiName" id="poiName" />
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <label for="poiDescription">Description</label>
+        <textarea
+          name="poiDescription"
+          id="poiDescription"
+          cols="20"
+          rows="2"
+        ></textarea>
+
+      <fieldset class="fieldset">
+        <label for="poiCost">Cost</label>
+        <input type="text" name="poiCost" id="poiCost" />
+      </fieldset>
+
+      <fieldset class="fieldset">
+        <label for="poiLocation">Location</label>
+        <select name="poiLocation" id="poiLocation">
+          <option value=""></option>
+          <option value="Italy">Italy</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="France">France</option>
+        </select>
+      </fieldset>
+    </form>
+
+    <article id="interestList"></article>
+
     <script type="module" src="./scripts/main.js"></script>
-</body>
+  </body>
 </html>
