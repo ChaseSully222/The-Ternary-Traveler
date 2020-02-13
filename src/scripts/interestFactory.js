@@ -1,7 +1,8 @@
-const createInterestList = interest => {
+const createInterestList = (interest) => {
 
     return `
-    <h1>${interest.name}</h1>
+    <h2>${interest.name}</h4>
+    <h4>${interest.placeId}</h4>
     <section>${interest.description}</section>
     <article>${interest.review}</article>
     <article>${interest.cost}</article>

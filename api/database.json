@@ -20,18 +20,26 @@
     {
       "id": 1,
       "placeId": 1,
-      "name": "Local Fish Market",
+      "name": "Fish Market",
       "description": "Local market where you can purchase fresh fish",
       "cost": 99.99,
-      "review": ""
+      "review": "The fish is extremely fresh"
     },
     {
-      "id": 1,
+      "id": 2,
       "placeId": 1,
       "name": "Local Market",
       "description": "Local market where you can purchase local products and try the local food",
-      "cost": 0.0,
+      "cost": 69.69,
       "review": "You can definitely get things for a lower price if you are willing to bargain!"
+    },
+    {
+      "id": 3,
+      "placeId": 2,
+      "name": "Cathedrale de St-Pierre",
+      "description": "This famous cathedral is best known for its historic significance as the church where John Calvin gave his inspiring sermons during the mid-16th century.",
+      "cost": 999.99,
+      "review": "Beautiful architecture"
     }
   ]
 }

@@ -24,6 +24,7 @@
           cols="20"
           rows="2"
         ></textarea>
+      </fieldset>
 
       <fieldset class="fieldset">
         <label for="poiCost">Cost</label>
@@ -34,13 +35,14 @@
         <label for="poiLocation">Location</label>
         <select name="poiLocation" id="poiLocation">
           <option value=""></option>
-          <option value="Italy">Italy</option>
-          <option value="Switzerland">Switzerland</option>
-          <option value="France">France</option>
+          <option value="1">Italy</option>
+          <option value="2">Switzerland</option>
+          <option value="3">France</option>
         </select>
       </fieldset>
+      <button type="button" id="saveBtn">Save Point of Interest</button>
     </form>
-
+    <h1>Destinations</h1>
     <article id="interestList"></article>
 
     <script type="module" src="./scripts/main.js"></script>

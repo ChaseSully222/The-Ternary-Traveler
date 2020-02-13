@@ -11,5 +11,4 @@ const renderInterests = interest => {
   });
 };
 
-
 export default renderInterests;
